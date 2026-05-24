@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Ademola Omosanya</title>
+  <meta name="description" content="Open-source projects and contributions by Ademola Omosanya." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="header-logo">← AO</a>
+      <nav class="site-nav">
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-drawer">
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="container">
+
+      <p class="page-eyebrow">03 — Projects</p>
+      <h1 class="page-title">Things I've<br />built & fixed.</h1>
+      <p class="page-lead">
+        Open-source contributions to real production systems —
+        tools used by millions of editors and contributors across Wikimedia projects.
+      </p>
+
+      <div class="projects-list">
+
+        <article class="project-item reveal">
+          <div class="project-content">
+            <span class="project-num">Project 01 · Wikimedia Commons · Volunteer</span>
+            <h2 class="project-name">Cat-a-lot Gadget</h2>
+            <p class="project-desc">
+              Improved the Cat-a-lot JavaScript gadget, a widely-used tool on Wikimedia Commons
+              for bulk photo categorisation. Investigated and fixed a critical bug where selecting
+              a protected file caused the in-progress dialog to hang indefinitely. Enhanced error
+              handling with callbacks, created user-friendly dialogs (Ignore &amp; continue / Stop editing),
+              improved feedback to users, added dark mode support, and modularised the error display logic.
+              The fix was reviewed and merged into the production version.
+            </p>
+            <div class="project-tags">
+              <span>JavaScript</span>
+              <span>MediaWiki Gadgets</span>
+              <span>CSS</span>
+              <span>Error Handling</span>
+            </div>
+          </div>
+          <div class="project-link-icon" aria-label="View project">↗</div>
+        </article>
+
+        <article class="project-item reveal">
+          <div class="project-content">
+            <span class="project-num">Project 02 · Wikimedia Foundation · Outreachy Round 30</span>
+            <h2 class="project-name">MediaWiki VisualData JSON-Schema</h2>
+            <p class="project-desc">
+              Contributed to MediaWiki's VisualData extension by implementing JSON-Schema support,
+              improving structured data handling across Wikimedia projects. Collaborated with project
+              maintainers to build functionality that simplifies the importation of pages, schemas,
+              and slots — with a full editor handling CRUD operations. Continued as a volunteer
+              after the internship, maintaining and enhancing the extension by writing code,
+              reviewing feedback, and raising pull requests.
+            </p>
+            <div class="project-tags">
+              <span>PHP</span>
+              <span>JavaScript</span>
+              <span>JSON Schema</span>
+              <span>MySQL</span>
+              <span>Phabricator</span>
+              <span>MediaWiki</span>
+            </div>
+          </div>
+          <div class="project-link-icon" aria-label="View project">↗</div>
+        </article>
+
+        <article class="project-item reveal">
+          <div class="project-content">
+            <span class="project-num">Project 03 · OCaml · Outreachy Contribution</span>
+            <h2 class="project-name">OCaml Website Footer Restructuring</h2>
+            <p class="project-desc">
+              As an Outreachy applicant, completed a selected task to rearrange links
+              within the footer template of the OCaml project's website. Reorganised
+              footer links for improved navigation and user experience. Collaborated
+              with the OCaml development team, adhered to project standards, and ensured
+              seamless integration with the existing website design.
+            </p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>OCaml</span>
+              <span>Open Source</span>
+            </div>
+          </div>
+          <div class="project-link-icon" aria-label="View project">↗</div>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Ademola Omosanya</p>
+      <div class="footer-links">
+        <a href="https://github.com/ademolaomosanya" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:omosanyaademola@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
