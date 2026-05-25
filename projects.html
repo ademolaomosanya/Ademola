@@ -7,7 +7,7 @@
   <meta name="description" content="Open-source projects and contributions by Ademola Omosanya." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -69,7 +69,7 @@
           <div class="project-link-icon" aria-label="View project">↗</div>
         </article>
 
-        <article class="project-item reveal">
+        <article class="project-item project-item--arch reveal">
           <div class="project-content">
             <span class="project-num">Project 02 · Wikimedia Foundation · Outreachy Round 30</span>
             <h2 class="project-name">MediaWiki VisualData JSON-Schema</h2>
@@ -90,12 +90,47 @@
               <span>MediaWiki</span>
             </div>
           </div>
+          <div class="arch-card">
+            <p class="arch-title">Extension Architecture</p>
+            <div class="arch-flow">
+              <div class="arch-node">MediaWiki Core</div>
+              <div class="arch-arrow">↓</div>
+              <div class="arch-node">VisualData Ext.</div>
+              <div class="arch-arrow">↓</div>
+              <div class="arch-node">JSON Schema</div>
+              <div class="arch-arrow">↓</div>
+              <div class="arch-node">MySQL / API</div>
+            </div>
+            <p class="arch-badge">Outreachy Round 30</p>
+          </div>
           <div class="project-link-icon" aria-label="View project">↗</div>
         </article>
 
         <article class="project-item reveal">
           <div class="project-content">
-            <span class="project-num">Project 03 · OCaml · Outreachy Contribution</span>
+            <span class="project-num">Project 03 · ViciaTech Engineering · Jul–Aug 2022</span>
+            <h2 class="project-name">Ribes Page — Frontend Components</h2>
+            <p class="project-desc">
+              Built and shipped multiple responsive UI components for Ribes Page, an early-stage
+              Nigerian professional platform by ViciaTech Engineering. Implemented an About component,
+              Overview section, Hire Me modal, Resend Email modal, and Uploads component — all
+              designed and tested across mobile and desktop viewports. Worked within a structured
+              Git workflow, raising PRs and merging into the develop branch alongside the core team.
+            </p>
+            <div class="project-tags">
+              <span>React</span>
+              <span>JavaScript</span>
+              <span>CSS</span>
+              <span>Responsive Design</span>
+              <span>Git</span>
+            </div>
+          </div>
+          <div class="project-link-icon" aria-label="View project">↗</div>
+        </article>
+
+        <article class="project-item reveal">
+          <div class="project-content">
+            <span class="project-num">Project 04 · OCaml · Outreachy Contribution</span>
             <h2 class="project-name">OCaml Website Footer Restructuring</h2>
             <p class="project-desc">
               As an Outreachy applicant, completed a selected task to rearrange links
@@ -113,6 +148,23 @@
           </div>
           <div class="project-link-icon" aria-label="View project">↗</div>
         </article>
+
+      </div>
+
+      <div class="projects-extras reveal">
+
+        <div class="currently-working">
+          <h2 class="cw-heading">Currently working on</h2>
+          <ul class="cw-list">
+            <li>Building an AI Chatbot With Web Speech API</li>
+            <li>Building this portfolio</li>
+            <li>Exploring new open-source projects</li>
+          </ul>
+        </div>
+
+        <div class="arch-card" style="display:none">
+        </div>
+
 
       </div>
 

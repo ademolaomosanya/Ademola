@@ -12,10 +12,10 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:     #F3F0E6;
-      --card:   #FDFCF7;
-      --text:   #111110;
-      --muted:  #8A8878;
+      --bg:     #1E1E2E;
+      --card:   #2A2A3E;
+      --text:   #EEEEF2;
+      --muted:  #8888AA;
       --accent: #FF5500;
       --sans:   'Space Grotesk', -apple-system, sans-serif;
       --hand:   'Caveat', cursive;
@@ -38,8 +38,8 @@
       height: 100svh;
       background-color: var(--bg);
       background-image:
-        linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
       background-size: 36px 36px;
       overflow: hidden;
     }
@@ -92,7 +92,7 @@
       text-align: center;
       z-index: 2;
       pointer-events: none;
-      width: min(560px, 80vw);
+      width: min(760px, 90vw);
     }
 
     .big-name {
@@ -105,8 +105,9 @@
     }
 
     .tagline {
-      font-size: clamp(0.8rem, 1.3vw, 0.95rem);
-      color: #666;
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-weight: 600;
+      color: #AAAACC;
       line-height: 1.7;
       margin-bottom: 0.6rem;
     }
@@ -131,20 +132,17 @@
 
     .item:hover { filter: drop-shadow(0 8px 20px rgba(0,0,0,0.14)); }
 
-    .card {
-      background: var(--card);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3.6rem;
+    .nav-icon {
+      font-size: 7.5rem;
       line-height: 1;
-      padding: 1.25rem 1.6rem;
-      box-shadow:
-        0 1px 3px rgba(0,0,0,0.07),
-        0 4px 16px rgba(0,0,0,0.08),
-        0 12px 40px rgba(0,0,0,0.05),
-        inset 0 1px 0 rgba(255,255,255,0.95);
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)) drop-shadow(0 10px 28px rgba(0,0,0,0.1));
+    }
+
+    .nav-icon-svg {
+      width: 120px;
+      height: 120px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2)) drop-shadow(0 10px 28px rgba(0,0,0,0.12));
+      border-radius: 24px;
     }
 
     .label {
@@ -152,9 +150,9 @@
       font-weight: 700;
       letter-spacing: 0.13em;
       text-transform: uppercase;
-      color: #555;
-      background: rgba(253,252,247,0.9);
-      border: 1px solid rgba(0,0,0,0.1);
+      color: #CCCCDD;
+      background: rgba(42,42,62,0.9);
+      border: 1px solid rgba(255,255,255,0.12);
       padding: 0.26rem 0.8rem;
       border-radius: 20px;
       backdrop-filter: blur(6px);
@@ -171,7 +169,7 @@
     }
 
     .item-resume {
-      top: 8%;
+      top: 3%;
       right: 18%;
       transform: rotate(3deg);
     }
@@ -181,7 +179,7 @@
 
     .item-projects {
       top: 44%;
-      left: 5%;
+      left: calc(5% + 120px);
       transform: rotate(-2deg);
     }
     .item-projects:hover {
@@ -189,30 +187,21 @@
     }
 
     .item-about {
-      top: 41%;
-      right: 5%;
+      top: calc(41% + 15px);
+      right: calc(5% + 120px);
       transform: rotate(4deg);
     }
     .item-about:hover {
       transform: rotate(1.5deg) scale(1.07) translateY(-6px);
     }
 
-    .item-contact {
-      bottom: 7%;
-      left: 50%;
-      transform: translateX(-50%) rotate(-1.5deg);
-    }
-    .item-contact:hover {
-      transform: translateX(-50%) rotate(0deg) scale(1.07) translateY(-6px);
-    }
-
     .item-blog {
-      bottom: 7%;
-      left: 31%;
-      transform: rotate(2.5deg);
+      bottom: calc(7% - 20px);
+      left: 50%;
+      transform: translateX(-50%) rotate(2.5deg);
     }
     .item-blog:hover {
-      transform: rotate(0.5deg) scale(1.07) translateY(-6px);
+      transform: translateX(-50%) rotate(0.5deg) scale(1.07) translateY(-6px);
     }
 
     /* ── HANDWRITTEN ANNOTATION ─────────────────── */
@@ -234,106 +223,24 @@
     }
 
     /* ── STICKY NOTE ────────────────────────────── */
-    .sticky {
-      position: absolute;
-      bottom: 14%;
-      left: 3.5%;
-      width: 200px;
-      background: #FFFDE0;
-      border-radius: 3px 3px 3px 3px;
-      padding: 1rem 1.1rem 1.2rem;
-      transform: rotate(3deg);
-      box-shadow:
-        0 2px 6px rgba(0,0,0,0.1),
-        0 8px 24px rgba(0,0,0,0.08),
-        inset 0 -2px 0 rgba(0,0,0,0.04);
-      z-index: 4;
-      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
-    }
-
-    /* tape strip at top */
-    .sticky::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50px;
-      height: 16px;
-      background: rgba(255,255,200,0.7);
-      border-radius: 2px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    .sticky:hover {
-      transform: rotate(1deg) scale(1.04) translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.13), 0 16px 40px rgba(0,0,0,0.07);
-    }
-
-    .sticky-heading {
-      font-family: var(--hand);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #333;
-      margin-bottom: 0.55rem;
-      line-height: 1.2;
-    }
-
-    .sticky-divider {
-      height: 1px;
-      background: rgba(0,0,0,0.1);
-      margin-bottom: 0.6rem;
-    }
-
-    .sticky-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-    }
-
-    .sticky-list li {
-      font-size: 0.74rem;
-      font-weight: 500;
-      color: #444;
-      line-height: 1.45;
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    .sticky-list li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: #888;
-      font-size: 0.7rem;
-    }
-
-    /* hide sticky on small screens to avoid clutter */
-    @media (max-width: 900px) { .sticky { display: none; } }
-
     /* ── DECORATIVE DESK OBJECTS ─────────────────── */
 
     /* shared deco base */
     .deco {
       position: absolute;
       z-index: 4;
-      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
-                  filter 0.35s ease;
     }
-    .deco:hover { filter: drop-shadow(0 8px 24px rgba(0,0,0,0.14)); }
 
     /* — TERMINAL ——————————————————————————————— */
     .deco-terminal {
       top: 5%;
-      left: 51%;
+      left: calc(50% - 100px);
       width: 200px;
       transform: rotate(2deg);
       border-radius: 9px;
       overflow: hidden;
       box-shadow: 0 4px 24px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.1);
     }
-    .deco-terminal:hover { transform: rotate(0.5deg) scale(1.05) translateY(-5px); }
 
     .term-bar {
       background: #3C3C3C;
@@ -389,7 +296,6 @@
       border: 1px solid rgba(0,0,0,0.1);
       box-shadow: 0 3px 14px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.06);
     }
-    .deco-browser:hover { transform: rotate(0deg) scale(1.05) translateY(-4px); }
 
     .browser-chrome {
       background: #ECEAE1;
@@ -454,7 +360,6 @@
       border: 1px solid rgba(0,0,0,0.12);
       box-shadow: 0 3px 14px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.07);
     }
-    .deco-bot:hover { transform: rotate(0.5deg) scale(1.05) translateY(-4px); }
 
     .bot-tab {
       background: #282C34;
@@ -497,159 +402,9 @@
     .py-def  { color: #E5C07B; }
 
     /* — ARCHITECTURE CARD ————————————————————— */
-    .deco-arch {
-      bottom: 20%;
-      right: 9%;
-      width: 168px;
-      background: var(--card);
-      border: 1px solid rgba(0,0,0,0.09);
-      border-radius: 10px;
-      padding: 0.9rem 1rem;
-      transform: rotate(3.5deg);
-      box-shadow: 0 3px 14px rgba(0,0,0,0.09), 0 1px 3px rgba(0,0,0,0.05);
-    }
-    .deco-arch:hover { transform: rotate(1deg) scale(1.05) translateY(-4px); }
-
-    .arch-title {
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.7rem;
-    }
-    .arch-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .arch-node {
-      font-size: 0.68rem;
-      font-weight: 600;
-      color: var(--text);
-      background: #F0F4FF;
-      border: 1px solid #C7D7F5;
-      border-radius: 5px;
-      padding: 0.3rem 0.55rem;
-      text-align: center;
-    }
-    .arch-arrow {
-      font-size: 0.65rem;
-      color: var(--muted);
-      text-align: center;
-      line-height: 1.4;
-    }
-    .arch-badge {
-      margin-top: 0.6rem;
-      font-size: 0.56rem;
-      color: var(--accent);
-      font-weight: 600;
-      text-align: center;
-      letter-spacing: 0.06em;
-    }
-
-    /* — WIKIMEDIA REFERENCE ——————————————————— */
-    .deco-wiki {
-      top: 28%;
-      right: 16%;
-      width: 155px;
-      background: var(--card);
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 10px;
-      padding: 0.8rem 0.9rem;
-      transform: rotate(2deg);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-    .deco-wiki:hover { transform: rotate(0deg) scale(1.05) translateY(-4px); }
-
-    .wiki-header {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 0.55rem;
-    }
-    .wiki-globe {
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 35%, #87CEEB, #1a6eb5);
-      flex-shrink: 0;
-    }
-    .wiki-org {
-      font-size: 0.62rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.2;
-    }
-    .wiki-divider { height: 1px; background: var(--border); margin-bottom: 0.5rem; }
-    .wiki-stat {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.3rem;
-    }
-    .wiki-stat-label { font-size: 0.56rem; color: var(--muted); }
-    .wiki-stat-val   { font-size: 0.66rem; font-weight: 700; color: var(--text); }
-    .wiki-tag {
-      display: inline-block;
-      margin-top: 0.4rem;
-      font-size: 0.54rem;
-      font-weight: 700;
-      padding: 0.18rem 0.5rem;
-      border-radius: 20px;
-      background: #EEF2FF;
-      color: #3344AA;
-      letter-spacing: 0.04em;
-    }
-
-    /* — ENGINEERING NOTEBOOK ——————————————————— */
-    .deco-notebook {
-      top: 22%;
-      left: 30%;
-      width: 148px;
-      background: #FFFEF5;
-      border-radius: 4px 8px 8px 4px;
-      overflow: hidden;
-      transform: rotate(2.5deg);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.09), 0 6px 20px rgba(0,0,0,0.06),
-                  inset 3px 0 0 #E8C4C4;
-    }
-    .deco-notebook:hover { transform: rotate(0.5deg) scale(1.05) translateY(-4px); }
-
-    .nb-header {
-      background: #F5E6E6;
-      padding: 0.35rem 0.6rem 0.35rem 0.9rem;
-      font-size: 0.6rem;
-      font-weight: 700;
-      color: #A55;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .nb-body {
-      padding: 0.5rem 0.6rem 0.6rem 0.9rem;
-      background-image: repeating-linear-gradient(
-        transparent, transparent 15px,
-        rgba(0,0,180,0.06) 15px, rgba(0,0,180,0.06) 16px
-      );
-    }
-    .nb-line {
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 0.58rem;
-      color: #444;
-      line-height: 16px;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    .nb-comment { color: #888; }
-    .nb-key     { color: #A55; }
-    .nb-val     { color: #2A6; }
-    .nb-str     { color: #D08; }
-
     /* hide decorations on small screens */
-    @media (max-width: 1100px) {
-      .deco-notebook, .deco-wiki { display: none; }
-    }
     @media (max-width: 900px) {
-      .deco-terminal, .deco-browser, .deco-arch { display: none; }
+      .deco-terminal, .deco-browser { display: none; }
     }
 
     /* ── SOCIAL LINKS ───────────────────────────── */
@@ -658,25 +413,41 @@
       bottom: 1.75rem;
       right: 2rem;
       display: flex;
+      flex-direction: row;
       align-items: center;
-      gap: 0.8rem;
+      gap: 0;
       z-index: 10;
+      background: rgba(42,42,62,0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 50px;
+      padding: 0.55rem 1.25rem;
     }
 
     .socials-label {
-      font-size: 0.72rem;
+      font-size: 0.78rem;
+      font-weight: 500;
       color: var(--muted);
+      padding-right: 1rem;
+      margin-right: 0.75rem;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      white-space: nowrap;
     }
 
     .socials a {
-      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: #555;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 1px;
-      transition: color 0.2s, border-color 0.2s;
+      color: #CCCCDD;
+      padding: 0.3rem 0.75rem;
+      border-radius: 30px;
+      transition: background 0.2s, color 0.2s;
     }
-    .socials a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .socials a:hover { background: rgba(255,255,255,0.08); color: #fff; }
+
+    .socials a svg { flex-shrink: 0; }
 
     /* ── RESPONSIVE ─────────────────────────────── */
     @media (max-width: 900px) {
@@ -686,10 +457,17 @@
       .ann-experience { display: none; }
     }
 
-    /* blog card: white bg looks better with the Hashnode SVG */
-    .blog-card {
-      background: #fff;
-      padding: 1rem 1.25rem;
+    .card-img {
+      display: block;
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)) drop-shadow(0 12px 32px rgba(0,0,0,0.1));
+    }
+
+    .resume-img {
+      width: 210px;
+      height: 210px;
     }
 
     @media (max-width: 680px) {
@@ -709,9 +487,11 @@
       .item-about { top: 43%; right: 1%; }
       .item-blog { bottom: 14%; left: 50%; transform: translateX(-50%) rotate(2deg); }
       .item-blog:hover { transform: translateX(-50%) rotate(0.5deg) scale(1.07) translateY(-6px); }
-      .item-contact { bottom: 4%; }
 
-      .socials { bottom: 1rem; right: 1rem; }
+      .socials { right: 0.75rem; bottom: 1rem; padding: 0.4rem 0.75rem; }
+      .socials-label { display: none; }
+      .socials a { padding: 0.3rem 0.5rem; font-size: 0; }
+      .socials a svg { width: 18px; height: 18px; }
     }
   </style>
 </head>
@@ -728,37 +508,30 @@
 
     <!-- Floating items — each is a page link -->
     <a href="experience.html" class="item item-experience">
-      <div class="card">🗂️</div>
+      <span class="nav-icon">🗂️</span>
       <span class="label">Experience</span>
     </a>
 
-    <a href="about.html" class="item item-resume">
-      <div class="card">📋</div>
-      <span class="label">Résumé</span>
+    <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="item item-resume">
+      <img src="resume.webp" alt="Résumé" class="card-img resume-img" />
+      <span class="label">Résumé ↗</span>
     </a>
 
     <a href="projects.html" class="item item-projects">
-      <div class="card">💻</div>
+      <img src="projects.webp" alt="Projects" class="card-img" />
       <span class="label">Projects</span>
     </a>
 
     <a href="about.html" class="item item-about">
-      <div class="card">📓</div>
+      <span class="nav-icon">📓</span>
       <span class="label">About</span>
     </a>
 
-    <a href="contact.html" class="item item-contact">
-      <div class="card">✉️</div>
-      <span class="label">Contact</span>
-    </a>
-
     <a href="https://ademolaomo.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="item item-blog">
-      <div class="card blog-card">
-        <svg width="38" height="38" viewBox="0 0 337 337" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="337" height="337" rx="75" fill="#2962FF"/>
-          <path d="M168.5 71C114.5 71 71 114.5 71 168.5C71 222.5 114.5 266 168.5 266C222.5 266 266 222.5 266 168.5C266 114.5 222.5 71 168.5 71ZM168.5 214C141.5 214 119.5 192 119.5 165C119.5 138 141.5 116 168.5 116C195.5 116 217.5 138 217.5 165C217.5 192 195.5 214 168.5 214Z" fill="white"/>
-        </svg>
-      </div>
+      <svg class="nav-icon-svg" viewBox="0 0 337 337" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="337" height="337" rx="75" fill="#2962FF"/>
+        <path d="M168.5 71C114.5 71 71 114.5 71 168.5C71 222.5 114.5 266 168.5 266C222.5 266 266 222.5 266 168.5C266 114.5 222.5 71 168.5 71ZM168.5 214C141.5 214 119.5 192 119.5 165C119.5 138 141.5 116 168.5 116C195.5 116 217.5 138 217.5 165C217.5 192 195.5 214 168.5 214Z" fill="white"/>
+      </svg>
       <span class="label">Blog ↗</span>
     </a>
 
@@ -766,22 +539,12 @@
     <p class="annotation ann-experience">open source<br />contributions →</p>
 
     <!-- Sticky note: currently working on -->
-    <div class="sticky">
-      <p class="sticky-heading">Currently<br />working on</p>
-      <div class="sticky-divider"></div>
-      <ul class="sticky-list">
-        <li>Mentoring interns @ Wikimedia (PHP → Python)</li>
-        <li>Building this portfolio</li>
-        <li>Exploring new open-source projects</li>
-      </ul>
-    </div>
-
     <!-- Central name -->
     <div class="center">
       <h1 class="big-name">Ademola Omosanya</h1>
       <p class="tagline">
-        Software engineer who has actually shipped things.<br />
-        Open-source contributor &amp; mentor at Wikimedia Foundation.
+        Software engineer that loves taking ideas from concept to launch. <br />
+       Open-source contributor &amp; mentor at Wikimedia Foundation.
       </p>
       <p class="career-path">
         OCaml Contributor → Outreachy Intern @ Wikimedia → SWE Mentor @ Wikimedia
@@ -806,85 +569,32 @@
       </div>
     </div>
 
-    <!-- ② Browser rendering sketch -->
-    <div class="deco deco-bot">
-      <div class="browser-chrome">
-        <div class="browser-dots">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="browser-addr">mediawiki.org/wiki/Extension:VisualData</div>
-      </div>
-      <div class="browser-body">
-        <div class="browser-hero">
-          <span class="browser-wiki-w">MediaWiki</span>
-        </div>
-        <div class="browser-lines">
-          <div class="browser-line w90"></div>
-          <div class="browser-line w75"></div>
-          <div class="browser-line w80"></div>
-          <div class="browser-line w55"></div>
-        </div>
-      </div>
-    </div>
 
- 
 
-    <!-- ④ Architecture card -->
-    <div class="deco deco-arch">
-      <p class="arch-title">Extension Architecture</p>
-      <div class="arch-flow">
-        <div class="arch-node">MediaWiki Core</div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-node">VisualData Ext.</div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-node">JSON Schema</div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-node">MySQL / API</div>
-      </div>
-      <p class="arch-badge">Outreachy Round 30</p>
-    </div>
 
-    <!-- ④ Wikimedia reference card -->
-    <div class="deco deco-wiki">
-      <div class="wiki-header">
-        <div class="wiki-globe"></div>
-        <span class="wiki-org">Wikimedia<br />Foundation</span>
-      </div>
-      <div class="wiki-divider"></div>
-      <div class="wiki-stat">
-        <span class="wiki-stat-label">Role</span>
-        <span class="wiki-stat-val">SWE Mentor</span>
-      </div>
-      <div class="wiki-stat">
-        <span class="wiki-stat-label">Since</span>
-        <span class="wiki-stat-val">Oct 2025</span>
-      </div>
-      <div class="wiki-stat">
-        <span class="wiki-stat-label">Projects</span>
-        <span class="wiki-stat-val">3 merged</span>
-      </div>
-      <span class="wiki-tag">OUTREACHY MENTOR</span>
-    </div>
-
-    <!-- ⑤ Engineering notebook -->
-    <div class="deco deco-notebook">
-      <div class="nb-header">eng. notes</div>
-      <div class="nb-body">
-        <div class="nb-line nb-comment">// VisualData schema</div>
-        <div class="nb-line"><span class="nb-key">"type"</span><span>: </span><span class="nb-str">"object"</span><span>,</span></div>
-        <div class="nb-line"><span class="nb-key">"props"</span><span>: {</span></div>
-        <div class="nb-line">&nbsp;&nbsp;<span class="nb-key">"title"</span><span>: {</span></div>
-        <div class="nb-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb-val">string</span></div>
-        <div class="nb-line">&nbsp;&nbsp;}</div>
-        <div class="nb-line">}</div>
-      </div>
-    </div>
 
     <!-- Social links -->
     <div class="socials">
       <span class="socials-label">Find me on</span>
-      <a href="https://github.com/ademolaomosanya" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="mailto:omosanyaademola@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/ademola-omosanya/" target="_blank" rel="noopener noreferrer">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/ademolaomosanya" target="_blank" rel="noopener noreferrer">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+        GitHub
+      </a>
+      <a href="mailto:omosanyaademola@gmail.com">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+        Email
+      </a>
     </div>
 
   </div>

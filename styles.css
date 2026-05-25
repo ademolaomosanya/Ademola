@@ -2,14 +2,14 @@
    Variables & Reset
    ================================================================ */
 :root {
-  --bg:       #F4F1EB;
-  --surface:  #FEFDFA;
-  --text:     #111110;
-  --muted:    #8C8A82;
+  --bg:       #1E1E2E;
+  --surface:  #2A2A3E;
+  --text:     #EEEEF2;
+  --muted:    #8888AA;
   --accent:   #FF5500;
-  --border:   #DEDAD2;
-  --dark:     #111110;
-  --dark-2:   #1C1C1B;
+  --border:   #3A3A5A;
+  --dark:     #13131F;
+  --dark-2:   #0F0F1A;
   --font:     'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --max:      1020px;
 }
@@ -43,7 +43,7 @@ ul { list-style: none; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(244,241,235,0.92);
+  background: rgba(30,30,46,0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -234,7 +234,7 @@ ul { list-style: none; }
 .home-nav-item:hover .nav-item-title,
 .home-nav-item:hover .nav-item-desc,
 .home-nav-item:hover .nav-item-arrow {
-  color: #F4F1EB;
+  color: #EEEEF2;
 }
 
 .home-nav-item:hover .nav-item-num { color: var(--accent); }
@@ -449,7 +449,7 @@ ul { list-style: none; }
   font-weight: 700;
   padding: 0.18rem 0.55rem;
   border-radius: 20px;
-  background: #FFF0E9;
+  background: rgba(255,85,0,0.15);
   color: var(--accent);
   letter-spacing: 0.04em;
 }
@@ -534,7 +534,7 @@ ul { list-style: none; }
   font-weight: 600;
   padding: 0.25rem 0.65rem;
   border-radius: 20px;
-  background: #FFF0E9;
+  background: rgba(255,85,0,0.15);
   color: var(--accent);
   letter-spacing: 0.03em;
 }
@@ -703,4 +703,163 @@ ul { list-style: none; }
   .container { padding: 0 1.25rem; }
   .home-bar, .home-hero, .home-nav-item { padding-left: 1.25rem; padding-right: 1.25rem; }
   .home-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
+
+/* ── CURRENTLY WORKING ON (projects page) ──────────── */
+.currently-working {
+  margin-top: 4rem;
+  padding: 2.5rem 3rem;
+  background: #FFFDE0;
+  border-radius: 6px;
+  border-left: 4px solid #F5D000;
+  max-width: 700px;
+  min-height: 180px;
+  position: relative;
+}
+
+.currently-working::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 2.5rem;
+  width: 56px;
+  height: 18px;
+  background: rgba(255,255,200,0.75);
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.cw-heading {
+  font-family: 'Caveat', cursive;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.cw-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cw-list li {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;
+  padding-left: 1.25rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.cw-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* ── PROJECTS EXTRAS ROW ────────────────────────── */
+.projects-extras {
+  margin-top: 4rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Architecture card */
+.arch-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.4rem;
+  min-width: 160px;
+}
+
+.arch-title {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+.arch-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.arch-node {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.35rem 0.65rem;
+  text-align: center;
+}
+.arch-arrow {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+.arch-badge {
+  margin-top: 0.7rem;
+  font-size: 0.6rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+/* Engineering notebook */
+.eng-notebook {
+  background: #FFFEF5;
+  border-radius: 4px 8px 8px 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07), inset 3px 0 0 #E8C4C4;
+  min-width: 200px;
+}
+.eng-notebook .nb-header {
+  background: #F5E6E6;
+  padding: 0.4rem 0.8rem 0.4rem 1rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #A55;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.eng-notebook .nb-body {
+  padding: 0.6rem 0.8rem 0.7rem 1rem;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 20px,
+    rgba(0,0,180,0.05) 20px, rgba(0,0,180,0.05) 21px
+  );
+}
+.nb-line {
+  font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: #444;
+  line-height: 20px;
+}
+.nb-comment { color: #999; }
+.nb-key     { color: #A55; }
+.nb-val     { color: #2A6; }
+.nb-str     { color: #D08; }
+
+/* ── VISUALDATA PROJECT — arch card inline ──────── */
+.project-item--arch {
+  grid-template-columns: 1fr auto auto;
+  align-items: start;
+  gap: 2rem;
+}
+
+.project-item--arch .arch-card {
+  align-self: center;
+  min-width: 155px;
 }
