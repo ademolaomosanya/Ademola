@@ -1,4 +1,4 @@
-# ademola.dev — Personal Portfolio
+# ademola.dev 
 
 Source code for my personal portfolio site. Built with plain HTML, CSS, and vanilla JavaScript — no frameworks, no build tools.
 
