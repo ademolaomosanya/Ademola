@@ -12,4 +12,4 @@ Source code for my personal portfolio site. Built with plain HTML, CSS, and vani
 
 ## Stack
 
-HTML · CSS · Vanilla JS · Google Fonts (Space Grotesk, Caveat)
+HTML · CSS · Vanilla JS · Google Fonts 
